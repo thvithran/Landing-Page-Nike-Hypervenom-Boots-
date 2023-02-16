@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 120vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: url(/images/hypervenomnike.jpg)no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header{
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 30px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .nike-logo{
+    margin-right: 100px;
+    padding-left: 5px;
+    letter-spacing: 5px;
+}
+
+header .logo{
+    position: relative;
+    color: #000;
+    font-size: 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+    
+}
+
+header .navigation a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 2px;
+    padding: 2px 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+    transition-property: background;
+}
+
+header .navigation a:not(:last-child){
+    margin-right:30px;
+}
+
+header .navigation a:hover{
+    background: #f09368;
+    color: rgb(255, 255, 255);
+}
+header .navigation a:active{
+    background: #b8b5b5b2;
+    color: white;
+}
+
+.content{
+    max-width: 500px;
+    margin-top: 70px;
+    margin-right: 100px;
+    margin-bottom: 70px;
+    margin-left: 100px;
+    
+}
+
+.content .info h2{
+    color: #F07136;
+    font-size: 55px;
+    line-height: 50px;
+    padding-bottom: 20px;
+}
+
+.content .info p{
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 210px;
+}
+
+.content .info .info-btn{
+    color: #838282;
+    /* background-color: rgb(255, 115, 0); */
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 30px;
+    /* border: #a5a4a4 solid; */
+}
+
+.content .info .info-btn:hover{
+    background: #f07136;
+    color: rgb(255, 255, 255);
+    /* border: #0f0f0f solid; */
+    border-radius: 60px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+label{
+    display: none;
+}
+
+#check{
+    z-index: 3;
+}
+
+/* Responsive Styles  960px*/
+
+@media (max-width:960px) {
+    header .navigation{
+        display: none;
+    }
+
+    label{
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+        transition: 0.3s;
+        transition-property: color;
+    }
+
+    label:hover{
+        color: #fff;
+    }
+
+    label .close-btn{
+        display: none;
+    }
+
+    #check:checked ~ header .navigation{
+        z-index: 2;
+        position: fixed;
+        background: rgba(165, 164, 164, 0.9);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #check:checked ~ header .navigation a{
+        font-weight: 700;
+        margin-right: 0;
+        margin-bottom: 50px;
+        letter-spacing: 2px;
+    }
+
+    #check:checked ~ header label .menu-btn{
+        display: none; 
+    }
+
+    #check:checked ~ header label .close-btn{
+        z-index: 2;
+        display: block;
+        position: fixed;
+    }
+
+    label .menu-btn{
+        position: absolute;
+    }
+}
+
